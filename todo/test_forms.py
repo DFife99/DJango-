@@ -2,7 +2,6 @@ from django.test import TestCase
 from .forms import ItemForm
 
 
-
 class TestItemForm(TestCase):
 
     def test_item_name_is_required(self):
@@ -16,7 +15,7 @@ class TestItemForm(TestCase):
         form = ItemForm({'name': 'Test todo item'})
         self.assertTrue(form.is_valid())
 
-    
+
     def test_fields_explicit(self):
         form = ItemForm()
         self.assertEqual(form.Meta.fields, ['name', 'done'])
